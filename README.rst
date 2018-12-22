@@ -4,7 +4,7 @@ pyFirmata2
 
 PyFirmata2 turns your Arduino into a data acquisition card controlled by Python.
 
-Just upload the default firmata sketch into your Arduino and you are all set.
+Just upload the default firmata sketch into your Arduino and you are all set.  Use baud rate **115200** from arduino side also.
 
 pyFirmata2 is an updated version of pyFirmata which adds precise sampling
 to the API so that it's possible to filter signals and in general do
