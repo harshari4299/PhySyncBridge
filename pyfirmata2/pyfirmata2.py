@@ -89,13 +89,13 @@ class Board(object):
     _parsing_sysex = False
     AUTODETECT = None
 
-    def __init__(self, port, layout=None, baudrate=57600, name=None, timeout=None):
+    def __init__(self, port, layout=None, baudrate=115200, name=None, timeout=None):
         if port == self.AUTODETECT:
             l = serial.tools.list_ports.comports()
             if l:
                 if platform == "linux" or platform == "linux2":
                     for d in l:
-                        if 'ACM' in d.device or 'usbserial' in d.device:
+                        if 'USB' in d.device or 'usbserial' in d.device:
                             port = str(d.device)
                 elif platform == "win32":
                     comports = []
@@ -191,10 +191,11 @@ class Board(object):
         self.add_cmd_handler(REPORT_VERSION, self._handle_report_version)
         self.add_cmd_handler(REPORT_FIRMWARE, self._handle_report_firmware)
 
-    def samplingOn(self, sample_interval=19):
+    def samplingOn(self, sample_interval=1):
         # enables sampling
         if not self.samplerThread.running:
-            if sample_interval < 10:
+            # raise ValueError("not self.samplerThread.running")
+            if sample_interval < 1:
                 raise ValueError("Sampling interval less than 10ms")
             self.setSamplingInterval(sample_interval)
             self.samplerThread.start()

@@ -49,7 +49,7 @@ class MockupSerial(deque):
 class MockupBoard(pyfirmata2.Board):
 
     def __init__(self, port, layout, values_dict={}):
-        self.sp = MockupSerial(port, 57600)
+        self.sp = MockupSerial(port, 115200)
         self.setup_layout(layout)
         self.values_dict = values_dict
         self.id = 1
