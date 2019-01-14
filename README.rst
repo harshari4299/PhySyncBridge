@@ -1,16 +1,16 @@
 ==========
-pyFirmata2
+phySyncFirmata
 ==========
 
-PyFirmata2 turns your Arduino into a data acquisition card controlled by Python.
+phySyncFirmata turns your Arduino into a data acquisition card controlled by Python.
 
 Just upload the default firmata sketch into your Arduino and you are all set.  Use baud rate **115200** from arduino side also.
 
-pyFirmata2 is an updated version of pyFirmata which adds precise sampling
+phySyncFirmata is an updated version of pyFirmata which adds precise sampling
 to the API so that it's possible to filter signals and in general do
 signal processing. Instead of "sleep" commands which have unreliable timing
 the Arduino performs the sampling in its firmware and transmits the data
-then to pyFirmata2. The Python application simply registers a callback
+then to phySyncFirmata. The Python application simply registers a callback
 which is then called every time after new data has arrived.
 
 
@@ -29,23 +29,23 @@ Start the IDE and upload the standard firmata sketch into your Arduino with::
 
 
 
-Install pyfirmata2
+Install phySyncFirmata
 ------------------
 
 The preferred way to install is with `pip` / `pip3`. Under Linux::
 
-    pip3 install pyfirmata2 [--user] [--upgrade]
+    pip3 install phySyncFirmata [--user] [--upgrade]
 
     
 and under Windows/Mac type::
   
-    pip install pyfirmata2 [--user] [--upgrade]
+    pip install phySyncFirmata [--user] [--upgrade]
 
     
 You can also install from source with::
 
-    git clone https://github.com/berndporr/pyFirmata2
-    cd pyFirmata2
+    git clone https://github.com/cedt/PhySyncFirmata
+    cd phySyncFirmata
 
 Under Linux type::
   
@@ -150,7 +150,7 @@ To close the serial port to the Arduino use the exit command::
 Example code
 ============
 
-The directory https://github.com/berndporr/pyFirmata2/tree/master/examples 
+The directory https://github.com/cedt/PhySyncFirmata/tree/master/examples 
 contains two realtime Oscilloscopes with precise sampling rate,
 a digital port reader, the ubiquitous flashing LED program and
 a program which prints data using the callback handler.
@@ -166,8 +166,8 @@ Start your program from the (Anaconda-) console / terminal and never within Spyd
 an example for Windows::
 
     (base) D:\>
-    (base) D:\>cd pyFirmata2\examples
-    (base) D:\pyFirmata2\examples>python realtime_two_channel_scope.py
+    (base) D:\>cd phySyncFirmata\examples
+    (base) D:\phySyncFirmata\examples>python realtime_two_channel_scope.py
 
 The problem with Spyder is that it won't let your Python program terminate properly
 which leaves the serial port in an undefined state. If you then re-run your program
@@ -180,7 +180,7 @@ After an update still the old version is being used
 
 If you use the `--user` option to install / update packages Python might keep older versions.
 
-Solution: Do a `pip uninstall pyfirmata2` multiple times until no version is left 
+Solution: Do a `pip uninstall phySyncFirmata` multiple times until no version is left 
 on your computer. Then install it again as described above.
 
 

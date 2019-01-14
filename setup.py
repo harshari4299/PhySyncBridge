@@ -6,17 +6,17 @@ with open('README.rst') as f:
     long_description = f.read()
 
 setup(
-    name='pyFirmata2',
-    version='2.0.0',
+    name='phySyncFirmata',
+    version='3.0.2',
     description="Use your Arduino as a data acquisition card under Python",
     long_description=long_description,
-    author='Bernd Porr',
-    author_email='mail@berndporr.me.uk',
-    packages=['pyfirmata2'],
+    author='Mrityunjai Kumar',
+    author_email='mrityunjai.kmr@gmail.com',
+    packages=['phySyncFirmata'],
     include_package_data=True,
-    install_requires=['pyserial'],
+    install_requires=['pyserial','matplotlib'],
     zip_safe=False,
-    url='https://github.com/berndporr/pyFirmata2',
+    url='https://github.com/cedt/PhySyncFirmata',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

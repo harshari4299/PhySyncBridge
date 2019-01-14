@@ -1,5 +1,5 @@
 from .boards import BOARDS
-from .pyfirmata2 import *  # NOQA
+from .phySyncFirmata import *  # NOQA
 
 # shortcut classes
 
