@@ -2,6 +2,8 @@
 phySyncFirmata
 ==========
 
+NOTE : This fork is for windows users using Python3
+
 phySyncFirmata turns your Arduino into a data acquisition card controlled by Python.
 
 Just upload the default firmata sketch into your Arduino and you are all set.  Use baud rate **115200** from arduino side also.
