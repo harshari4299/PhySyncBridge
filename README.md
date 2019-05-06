@@ -1,8 +1,8 @@
-==========
-phySyncFirmata
-==========
+# phySyncFirmata
+
 
 ![](https://github.com/cedt/PhySyncBridge/blob/master/oscilloscope_gif.gif)
+
 
 phySyncFirmata turns your Arduino into a data acquisition card controlled by Python.
 
@@ -16,12 +16,10 @@ then to phySyncFirmata. The Python application simply registers a callback
 which is then called every time after new data has arrived.
 
 
-Installation
-============
+# Installation
 
 
-Upload firmata
---------------
+# Upload firmata
 
 Install the Arduino IDE on your computer: https://www.arduino.cc/en/Main/Software
 
@@ -31,8 +29,7 @@ Start the IDE and upload the standard firmata sketch into your Arduino with::
 
 
 
-Install phySyncFirmata
-------------------
+# Install phySyncFirmata
 
 The preferred way to install is with `pip` / `pip3`. Under Linux::
 
@@ -58,12 +55,10 @@ Under Windows / Mac::
     python setup.py install
 
 
-Usage
-=====
+# Usage
 
 
-Initialisation
---------------
+# Initialisation
 
 Create an instance of the `Arduino` class::
 
@@ -81,8 +76,7 @@ COM port, for example `COM4`. On a MAC it's `/dev/ttys000`, `/dev/cu.usbmodem141
 check for the latest addition: `ls -l -t /dev/*`.
 
 
-Starting sampling at a given sampling interval
-----------------------------------------------
+# Starting sampling at a given sampling interval
 
 In order to sample analogue data you need to specify a
 sampling interval in ms. The smallest interval is 10ms::
@@ -93,8 +87,7 @@ Calling `samplingOn()` without its argument sets
 the sampling interval to 19ms.
 
 
-Enabling and reading from analoge pins
--------------------------------------------------
+# Enabling and reading from analoge pins
 
 To process data at a given sampling interval register a callback
 handler and then enable it::
@@ -117,8 +110,7 @@ recent value received from the Arduino. This call is non-blocking.
 You also need to run `enable_reporting()` on that pin before you can use `read()`.
 
 
-Writing to a digital port
--------------------------
+# Writing to a digital port
 
 Digital ports can be written to at any time::
   
@@ -127,8 +119,7 @@ Digital ports can be written to at any time::
 For any other functionality use the pin class below.
 
     
-The pin class
--------------
+# The pin class
 The command `get_pin` requests the class of a pin
 by specifying a string, composed of
 'a' or 'd' (depending on if you need an analog or digital pin), the pin
@@ -142,15 +133,13 @@ digital pin 3 as pwm::
     pin3.write(0.6)
 	
 	
-Closing the board
------------------
+# Closing the board
 To close the serial port to the Arduino use the exit command::
     
 	board.exit()
 
 
-Example code
-============
+# Example code
 
 The directory https://github.com/cedt/PhySyncFirmata/tree/master/examples 
 contains two realtime Oscilloscopes with precise sampling rate,
@@ -158,11 +147,9 @@ a digital port reader, the ubiquitous flashing LED program and
 a program which prints data using the callback handler.
 
 
-Troubleshooting
-===============
+# Troubleshooting
 
-Spyder
-------
+# Spyder
 
 Start your program from the (Anaconda-) console / terminal and never within Spyder. Here is
 an example for Windows::
@@ -177,8 +164,7 @@ it won't be able to talk to your Arduino. In the worst case you need to reboot y
 computer. Bottomline: use Spyder for editing, run the program from the console / terminal.
 
 
-After an update still the old version is being used
----------------------------------------------------
+# After an update still the old version is being used
 
 If you use the `--user` option to install / update packages Python might keep older versions.
 
@@ -188,8 +174,7 @@ on your computer. Then install it again as described above.
 
 
 
-Credits
-=======
+# Credits
 
 The original pyFirmata was written by Tino de Bruijn.
 The realtime sampling / callback has been added by Bernd Porr.
