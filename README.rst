@@ -2,7 +2,7 @@
 phySyncFirmata
 ==========
 
-![](oscilloscope_gif.gif)
+![](https://github.com/cedt/PhySyncBridge/blob/master/oscilloscope_gif.gif)
 
 phySyncFirmata turns your Arduino into a data acquisition card controlled by Python.
 
