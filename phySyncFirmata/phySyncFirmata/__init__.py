@@ -1,5 +1,5 @@
 from .boards import BOARDS
-from .phySyncFirmata import *  # NOQA
+from .PhySyncFirmata import *  # NOQA
 
 # shortcut classes
 
